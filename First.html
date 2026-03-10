@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Quiz App</title>
+
+<style>
+body{
+    font-family: Arial;
+    background:#f2f2f2;
+    text-align:center;
+}
+
+.quiz-box{
+    width:400px;
+    margin:100px auto;
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px gray;
+}
+
+button{
+    padding:10px 20px;
+    margin-top:10px;
+    background:blue;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkblue;
+}
+</style>
+</head>
+
+<body>
+
+<div class="quiz-box">
+
+<h2>Simple Quiz</h2>
+
+<p>1. What does HTML stand for?</p>
+
+<input type="radio" name="q1" value="a"> Hyper Text Markup Language <br>
+<input type="radio" name="q1" value="b"> High Text Machine Language <br>
+<input type="radio" name="q1" value="c"> Hyper Tool Mark Language <br><br>
+
+<button onclick="checkAnswer()">Submit</button>
+
+<p id="result"></p>
+
+</div>
+
+<script>
+
+function checkAnswer(){
+
+let ans = document.querySelector('input[name="q1"]:checked');
+
+if(ans == null){
+document.getElementById("result").innerHTML="Please select an answer";
+return;
+}
+
+if(ans.value == "a"){
+document.getElementById("result").innerHTML="Correct Answer ✅";
+}
+else{
+document.getElementById("result").innerHTML="Wrong Answer ❌";
+}
+
+}
+
+</script>
+
+</body>
+</html>
